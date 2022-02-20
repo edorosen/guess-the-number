@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <title>guess the number</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="wrapper__content">
+            <h1>Guess the number</h1>
+            <input id="enteredNumber" type="number" placeholder="Enter your answer here" />
+            <input id="button" type="button" value="Click to guess" />
+            <span id="answer"></span>
+            <div class="replay">
+                <span>Wanna play one more time?!</span>
+                <input id="replayButton" type="button" value="Replay" />
+                <span>Or, if your ass is on fire, you can shut it down;)</span>
+                <input id="shutButton" type="button" value="Shut down the application" />
+            </div>
+            <input id="startReplayButton" type="button" value="I wanna replay now" />
+        </div>
+        <div class="modal">
+            <div class="modal__container">
+                <h2>Guess the number</h2>
+                <span>Rules</span>
+                <ul>
+                    <li> - You need to guess guess the number ordered by the computer;</li>
+                    <li> - By default, max ordered number is "10", but you can change it in the input below;</li>
+                    <li> - Also, you can change the number of attempts you need to guess answer. By default it`s "3".
+                    </li>
+                </ul>
+                <input id="maxNumber" type="number" placeholder="Choice max number" />
+                <input id="numberOfAttempts" type="number" placeholder="Choice max number of attempts">
+                <input id="play" type="button" value="Play">
+            </div>
+            <button class="modal__close">&times;</button>
+        </div>
+    </div>
+    <script src="./js/scripts.js"></script>
+</body>
+
+</html>
