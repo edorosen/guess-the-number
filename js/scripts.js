@@ -11,8 +11,6 @@ let randomNumber,
     numberOfAttempts,
     play,
     close,
-    shutButton,
-    opnedWindow,
     startReplayButton,
     hint
 ;
@@ -34,11 +32,6 @@ replayButton = document.getElementById("replayButton");
 //replay when game is not over
 startReplayButton = document.getElementById("startReplayButton").addEventListener("click", function(){
     location.reload();
-});
-
-//killing button
-shutButton = document.getElementById("shutButton").addEventListener("click", function () {
-    history.back(-2);
 });
 
 close = document.querySelector(".modal__close").addEventListener("click", function () {
