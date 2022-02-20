@@ -15,8 +15,6 @@ let randomNumber,
     opnedWindow,
     startReplayButton
 ;
-//opened window for killing game
-opnedWindow = window.open('','_parent','');
 
 answer = document.getElementById("answer");
 button = document.getElementById("button");
@@ -38,7 +36,7 @@ startReplayButton = document.getElementById("startReplayButton").addEventListene
 
 //killing button
 shutButton = document.getElementById("shutButton").addEventListener("click", function () {
-    opnedWindow.close();
+    history.back(-2);
 });
 
 close = document.querySelector(".modal__close").addEventListener("click", function () {
