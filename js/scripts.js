@@ -13,9 +13,11 @@ let randomNumber,
     close,
     shutButton,
     opnedWindow,
-    startReplayButton
+    startReplayButton,
+    hint
 ;
 
+hint = document.getElementById("hint");
 answer = document.getElementById("answer");
 button = document.getElementById("button");
 
@@ -64,9 +66,15 @@ play.addEventListener("click", function () {
 button.addEventListener("click", function () {
     inputNumber = document.getElementById("enteredNumber").value;
     counter += 1;
+    if( inputNumber < randomNumber ){
+        hint.innerHTML = `<span style="display: flex; text-align: center; color: #008000; font-size: 20px; text-transform: uppercase;">to small</span>`;
+    } else if(inputNumber > randomNumber){
+        hint.innerHTML = `<span style="display: flex; text-align: center; color: #008000; font-size: 20px; text-transform: uppercase;">to big</span>`;
+    };
     if (randomNumber == inputNumber) {
         answer.innerHTML = `<span style="display: flex; text-align: center; color: #008000; font-size: 20px; text-transform: uppercase;">Congratulations, you win!</span>`;
         button.style.display = "none";
+        hint.style.display = "none";
         document.getElementById("startReplayButton").style.display = "none";
         replay.style.display = "flex";
         replayButton.addEventListener("click", function () {
@@ -76,6 +84,7 @@ button.addEventListener("click", function () {
         if (counter == attempts) {
             answer.innerHTML = "Your attempts are over!";
             button.style.display = "none";
+            hint.style.display = "none";
             document.getElementById("startReplayButton").style.display = "none";
             replay.style.display = "flex";
             replayButton.addEventListener("click", function () {
